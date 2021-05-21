@@ -2,7 +2,7 @@
 # Author : Ghansham Mahajan
 # Use : Apply the password policy for existing user
 rm -rf /tmp/myusername.txt
-cat /etc/passwd | grep 'bash' | cut -d: -f1 | grep -ivw -e 'utadmin' -e 'otisadmin' -e 'otisuser' -e 'nxautomation' -e 'omsagent' > /tmp/myusername.txt
+cat /etc/passwd | grep 'bash' | cut -d: -f1 | grep -ivw -e 'admin' -e 'root' -e 'appadmin' -e 'webadmin' -e 'webroot' > /tmp/myusername.txt
 input="/tmp/myusername.txt"
 while IFS= read -r line
 do
