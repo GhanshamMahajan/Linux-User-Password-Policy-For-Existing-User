@@ -4,7 +4,7 @@ Many times we have apply the password policy to the user using /etc/login.def fi
 
 I am collecting all the users who have bash shell and I am excluding some of the application users.
 
-cat /etc/passwd | grep 'bash' | cut -d: -f1 | grep -ivw -e 'utadmin' -e 'otisadmin' -e 'otisuser' -e 'nxautomation' -e 'omsagent'
+cat /etc/passwd | grep 'bash' | cut -d: -f1 | grep -ivw -e 'admin' -e 'root' -e 'appadmin' -e 'webadmin' -e 'webroot'
 
 Here is the policy set. Maximum password age = 90 days, Minimum Password age = 1 days, Warning password = 7 days
 
