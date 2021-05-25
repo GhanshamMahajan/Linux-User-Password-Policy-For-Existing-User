@@ -1,6 +1,10 @@
 #!/bin/bash
 # Author : Ghansham Mahajan
 # Use : Apply the password policy for existing user
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2  				# Check if script running by root or not
+   exit 1									                              #If it's not run by root then it will exit the script
+fi
 rm -rf /tmp/myusername.txt
 cat /etc/passwd | grep 'bash' | cut -d: -f1 | grep -ivw -e 'admin' -e 'root' -e 'appadmin' -e 'webadmin' -e 'webroot' > /tmp/myusername.txt
 input="/tmp/myusername.txt"
